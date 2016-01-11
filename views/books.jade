@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  div.top
+    h2 Books
+    ul
+      each book in books
+        li= book.name + " - " + book.author
+    
+  hr
+  div.bottom
+    h2 Form
+    form(name = "book-title", action = "/books", method = "post")
+      div.form-group
+        label Name of book
+          input.form-control(type = "text", name="book")
+      div.form-group
+        label Author of the book
+          input.form-control(type = "text", name="author")
+      input.btn.btn-primary(type = "submit", value="Save that book!")
+      
